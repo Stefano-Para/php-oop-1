@@ -11,19 +11,22 @@ class Movie {
     public $rating;
 
     public function setRating($voto) {
-        if($voto > 4.0) {
-            return "<h2 style=\"color: red;\">" . "This is a GREAT film!" . " " . "(Voto: $voto/5)" . "</h2>";
+        if ($voto <= 3.0) {
+            return "<h2 style=\"color: brown;\">" . "This is not the best film you'll ever seen.." . " " . "(Voto: $voto/5)" . "</h2>";
+        } elseif($voto < 4.0 && $voto > 3.0) {
+            return "<h2 style=\"color: orange;\">" . "This is an average film" . " " . "(Voto: $voto/5)" . "</h2>";
         } else {
-            return "<h2 style=\"color: brown;\">" . "This is not the best film you'll ever seen" . " " . "(Voto: $voto/5)" . "</h2>";
+            return "<h2 style=\"color: red;\">" . "This is a GREAT film!" . " " . "(Voto: $voto/5)" . "</h2>";
         }
     }
 }
+
 // 1/3
 $film1 = new Movie();
 $film1->title = "Trainspotting";
 $film1->director = "Danny Boyle";
-$film1->rating = 4.4;
-var_dump($film1);
+$film1->rating = 3.9;
+// var_dump($film1);
 echo "<h2>" . $film1->title . "</h2>"
     . "<h3>" . $film1->director . "</h3>"
     . "<h5>" . $film1->setRating($film1->rating) . "</h5>"
@@ -33,8 +36,8 @@ echo "<h2>" . $film1->title . "</h2>"
 $film2 = new Movie();
 $film2->title = "Il grande Lebowski";
 $film2->director = "Fratelli Coen";
-$film2->rating = 4.3;
-var_dump($film2);
+$film2->rating = 4.4;
+// var_dump($film2);
 echo "<h2>" . $film2->title . "</h2>"
     . "<h3>" . $film2->director . "</h3>"
     . "<h5>" . $film2->setRating($film2->rating) . "</h5>"
@@ -45,8 +48,8 @@ echo "<h2>" . $film2->title . "</h2>"
 $film3 = new Movie();
 $film3->title = "The Disaster Artist";
 $film3->director = "James Franco";
-$film3->rating = 4;
-var_dump($film3);
+$film3->rating = 3;
+// var_dump($film3);
 echo "<h2>" . $film3->title . "</h2>"
     . "<h3>" . $film3->director . "</h3>"
     . "<h5>" . $film3->setRating($film3->rating) . "</h5>"
@@ -54,7 +57,7 @@ echo "<h2>" . $film3->title . "</h2>"
 
 
 
-
+echo "<h6>" . "!! I N C R E D I B L E !! layout <br> from PARA" . "</h6>"
 
 ?>
 
